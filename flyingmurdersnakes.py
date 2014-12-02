@@ -3,8 +3,10 @@ import bge
 
 # the main setup function called once at engine launch
 def setup():
+        print("running setup()");
         bge.logic.globalDict['progress'] = 0;
         screamHopelesslyUntilGodComesBack();
+        print("completed setup()");
 
 # this next function is just for testing, assumes a keyboard sensor called 'test'
 def testProgressIncrement():
