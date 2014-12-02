@@ -27,11 +27,11 @@ def FirstStarWrapper(m):
         FirstStar(bge.logic.getRandomFloat()*20-10,bge.logic.getRandomFloat()*20-10);
         
 def makeGenerativeArt():
-	bge.logic.globalDict['progress'] = 1
+	#bge.logic.globalDict['progress'] = 1
 	FirstStarWrapper(bge.logic.globalDict['progress']+20);
-	FourthStarWrapper(bge.logic.GlobalDict['progress']+50);
-	ThirdStarWrapper(bge.logic.GlobalDict['progress']+100);
-	SecondStarWrapper(bge.logic.GlobalDict['progress']+200);
+	FourthStarWrapper(bge.logic.globalDict['progress']+50);
+	ThirdStarWrapper(bge.logic.globalDict['progress']+100);
+	SecondStarWrapper(bge.logic.globalDict['progress']+200);
   
 def SecondStar (x,y):
     q = bge.logic.getRandomFloat()*3-5;
