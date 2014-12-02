@@ -1,5 +1,21 @@
 import Rasterizer
 import bge
+
+# the main setup function called once at engine launch
+def setup():
+        print("running setup()");
+        bge.logic.globalDict['progress'] = 0;
+        screamHopelesslyUntilGodComesBack();
+        print("completed setup()");
+
+# this next function is just for testing, assumes a keyboard sensor called 'test'
+def testProgressIncrement():
+        controller = bge.logic.getCurrentController();
+        test = controller.sensors['test'];
+        if test:
+                if test.status==1:
+                        x = bge.logic.globalDict['progress'];
+                        bge.logic.globalDict['progress'] = x + 1;
 	
 def loadBlend(status):
 	print("Loaded %s" % status.libraryName);
