@@ -36,11 +36,11 @@ def makeBigStar:
 	scene = bge.logic.getCurrentScene();
 	objects = scene.objects;
 	import GameLogic as g;
-
-	sensor = controller.sensors["1"]
+		
+	sensor = controller.sensors["2"]
 	if sensor:
 		if sensor.status == 1:
-			duh = scene.addObject("Small star",owner);
+			duh = scene.addObject("Big star",owner);
 			duh.position = [0,0,5];
 			g.objectSelected = duh;
 			
