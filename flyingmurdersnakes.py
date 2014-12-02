@@ -30,6 +30,10 @@ def screamHopelesslyUntilGodComesBack():
 	
 	bge.logic.LibLoad('//bluestar.blend','Scene',async=True).onFinish = loadBlend;
 	bge.logic.LibLoad('//blackstar.blend','Scene',async=True).onFinish = loadBlend;
+	bge.logic.LibLoad('//greenstar.blend','Scene',async=True).onFinish = loadBlend;
+	bge.logic.LibLoad('//pinkstar.blend','Scene',async=True).onFinish = loadBlend;
+	bge.logic.LibLoad('//yellowstar.blend','Scene',async=True).onFinish = loadBlend;
+	bge.logic.LibLoad('//arrow.blend','Scene',async=True).onFinish = loadBlend;
 	scene.objects["Camera"].position = [0,0,9];
 
 	import GameLogic as g;
@@ -60,6 +64,62 @@ def makeBigStar():
 	if sensor:
 		if sensor.status == 1:
 			duh = scene.addObject("Black star",owner);
+			duh.position = [0,0,5];
+			g.objectSelected = duh;
+			
+def makeGreenStar():
+	controller = bge.logic.getCurrentController();
+	owner = controller.owner;
+	scene = bge.logic.getCurrentScene();
+	objects = scene.objects;
+	import GameLogic as g;
+		
+	sensor = controller.sensors["3"]
+	if sensor:
+		if sensor.status == 1:
+			duh = scene.addObject("Green star",owner);
+			duh.position = [0,0,5];
+			g.objectSelected = duh;
+			
+def makePinkStar():
+	controller = bge.logic.getCurrentController();
+	owner = controller.owner;
+	scene = bge.logic.getCurrentScene();
+	objects = scene.objects;
+	import GameLogic as g;
+		
+	sensor = controller.sensors["4"]
+	if sensor:
+		if sensor.status == 1:
+			duh = scene.addObject("Pink star",owner);
+			duh.position = [0,0,5];
+			g.objectSelected = duh;
+			
+def makeArrow():
+	controller = bge.logic.getCurrentController();
+	owner = controller.owner;
+	scene = bge.logic.getCurrentScene();
+	objects = scene.objects;
+	import GameLogic as g;
+		
+	sensor = controller.sensors["5"]
+	if sensor:
+		if sensor.status == 1:
+			duh = scene.addObject("Arrow",owner);
+			duh.position = [0,0,5];
+			g.objectSelected = duh;
+			
+def makeYellowStar():
+	controller = bge.logic.getCurrentController();
+	owner = controller.owner;
+	scene = bge.logic.getCurrentScene();
+	objects = scene.objects;
+	import GameLogic as g;
+		
+	sensor = controller.sensors["6"]
+	if sensor:
+		if sensor.status == 1:
+			duh = scene.addObject("Yellow star",owner);
 			duh.position = [0,0,5];
 			g.objectSelected = duh;
 			
