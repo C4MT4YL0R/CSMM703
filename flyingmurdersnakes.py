@@ -1,5 +1,6 @@
 import Rasterizer
 import bge
+import Generative
 
 # the main setup function called once at engine launch
 def setup():
@@ -7,6 +8,10 @@ def setup():
         bge.logic.globalDict['progress'] = 0;
         screamHopelesslyUntilGodComesBack();
         print("completed setup()");
+
+def draw():
+        print("draw()");
+        Generative.makeGenerativeArt();
 
 # this next function is just for testing, assumes a keyboard sensor called 'test'
 def testProgressIncrement():
@@ -21,23 +26,21 @@ def loadBlend(status):
 	print("Loaded %s" % status.libraryName);
 	
 def screamHopelesslyUntilGodComesBack():
-	Rasterizer.showMouse(1)
-
-	controller = bge.logic.getCurrentController();
-	owner = controller.owner;
-	scene = bge.logic.getCurrentScene();
-	objects = scene.objects;
-	
-	bge.logic.LibLoad('//bluestar.blend','Scene',async=True).onFinish = loadBlend;
-	bge.logic.LibLoad('//blackstar.blend','Scene',async=True).onFinish = loadBlend;
-	bge.logic.LibLoad('//greenstar.blend','Scene',async=True).onFinish = loadBlend;
-	bge.logic.LibLoad('//pinkstar.blend','Scene',async=True).onFinish = loadBlend;
-	bge.logic.LibLoad('//yellowstar.blend','Scene',async=True).onFinish = loadBlend;
-	bge.logic.LibLoad('//arrow.blend','Scene',async=True).onFinish = loadBlend;
-	scene.objects["Camera"].position = [0,0,9];
-
-	import GameLogic as g;
-	g.objectSelected = None;
+        print("screamHopelessleyUntilGodComesBack()");
+        Rasterizer.showMouse(1);
+        controller = bge.logic.getCurrentController();
+        owner = controller.owner;
+        scene = bge.logic.getCurrentScene();
+        objects = scene.objects;
+        bge.logic.LibLoad('//bluestar.blend','Scene',async=True).onFinish = loadBlend
+        bge.logic.LibLoad('//blackstar.blend','Scene',async=True).onFinish = loadBlend;
+        bge.logic.LibLoad('//greenstar.blend','Scene',async=True).onFinish = loadBlend;
+        bge.logic.LibLoad('//pinkstar.blend','Scene',async=True).onFinish = loadBlend;
+        bge.logic.LibLoad('//yellowstar.blend','Scene',async=True).onFinish = loadBlend;
+        bge.logic.LibLoad('//arrow.blend','Scene',async=True).onFinish = loadBlend;
+        scene.objects["Camera"].position = [0,0,9];
+        import GameLogic as g;
+        g.objectSelected = None;
 	
 def makeSmallStar():
 	controller = bge.logic.getCurrentController();
