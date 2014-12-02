@@ -27,10 +27,11 @@ def FirstStarWrapper(m):
         FirstStar(bge.logic.getRandomFloat()*20-10,bge.logic.getRandomFloat()*20-10);
         
 def makeGenerativeArt():
-    FirstStarWrapper(bge.logic.globalDict['progress']);
-    FourthStarWrapper(1); # is this one progress 2?
-    ThirdStarWrapper(1); # or is it a different relationship to progress
-    SecondStarWrapper(1);
+	bge.logic.globalDict['progress'] = 1
+	FirstStarWrapper(bge.logic.globalDict['progress']+20);
+	FourthStarWrapper(bge.logic.GlobalDict['progress']+50);
+	ThirdStarWrapper(bge.logic.GlobalDict['progress']+100);
+	SecondStarWrapper(bge.logic.GlobalDict['progress']+200);
   
 def SecondStar (x,y):
     q = bge.logic.getRandomFloat()*3-5;
