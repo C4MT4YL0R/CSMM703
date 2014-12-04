@@ -32,26 +32,26 @@ def chooseRandomDirection(obj,n):
 	scene = bge.logic.getCurrentScene();
 	obj = scene.objects[obj];
 	if n==0:
-		obj['dz'] = 0.01;
+		obj['dz'] = 0.05;
 		obj['dy'] = 0;
 		obj['dx'] = 0;
 	elif n==1:
-		obj['dz'] = -0.01
+		obj['dz'] = -0.05
 		obj['dy'] = 0
 		obj['dx'] = 0
 	elif n==2:
 		obj['dz'] = 0
 		obj['dy'] = 0
-		obj['dx'] = 0.01
+		obj['dx'] = 0.05
 	elif n==3:
 		obj['dz'] = 0
 		obj['dy'] = 0
-		obj['dx'] = -0.01
+		obj['dx'] = -0.05
 	elif n==4:
 		obj['dz'] = 0
-		obj['dy'] = 0.01
+		obj['dy'] = 0.05
 		obj['dx'] = 0
 	else:
 		obj['dz'] = 0
-		obj['dy'] = -0.01
+		obj['dy'] = -0.05
 		obj['dx'] = 0
