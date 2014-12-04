@@ -29,27 +29,29 @@ def directObject(objName):
 		chooseRandomDirection('Moon',random.randint(0,5));
 	
 def chooseRandomDirection(obj,n):
-		if n==0:
-			obj['dz'] = "0.1";
-			obj['dy'] = 0;
-			obj['dx'] = 0;
-		elif n==1:
-			obj['dz'] = -0.1
-			obj['dy'] = 0
-			obj['dx'] = 0
-		elif n==2:
-			obj['dz'] = 0
-			obj['dy'] = 0
-			obj['dx'] = 0.1
-		elif n==3:
-			obj['dz'] = 0
-			obj['dy'] = 0
-			obj['dx'] = -0.1
-		elif n==4:
-			obj['dz'] = 0
-			obj['dy'] = 0.1
-			obj['dx'] = 0
-		else:
-			obj['dz'] = 0
-			obj['dy'] = -0.1
-			obj['dx'] = 0
+	scene = bge.logic.getCurrentScene();
+	obj = scene.objects[obj];
+	if n==0:
+		obj['dz'] = 0.01;
+		obj['dy'] = 0;
+		obj['dx'] = 0;
+	elif n==1:
+		obj['dz'] = -0.01
+		obj['dy'] = 0
+		obj['dx'] = 0
+	elif n==2:
+		obj['dz'] = 0
+		obj['dy'] = 0
+		obj['dx'] = 0.01
+	elif n==3:
+		obj['dz'] = 0
+		obj['dy'] = 0
+		obj['dx'] = -0.01
+	elif n==4:
+		obj['dz'] = 0
+		obj['dy'] = 0.01
+		obj['dx'] = 0
+	else:
+		obj['dz'] = 0
+		obj['dy'] = -0.01
+		obj['dx'] = 0
